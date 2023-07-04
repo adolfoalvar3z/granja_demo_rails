@@ -1,0 +1,30 @@
+
+
+
+
+<%= link_to "New animal", new_animal_path %>
+
+<p style="color: green"><%= notice %></p>
+<h1>Animals</h1>
+
+<div class="table-responsive" id="animals">
+  <table class="table table-primary">
+    <thead>
+      <tr>
+        <th scope="col">Id Animal</th>
+        <th scope="col">Animal</th>
+        <th scope="col">Granjero</th>
+      </tr>
+    </thead>
+    <tbody>
+  <% @animals.each do |animal| %>
+      <tr class="">
+        <td scope="row"><%= animal.id %></td>
+        <td><%= animal.nombre %></td>
+        <td><%= animal.farmer.name %></td>
+      </tr>
+  <% end %>
+
+    </tbody>
+  </table>
+</div>
