@@ -6,4 +6,5 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-Farmer.create([{name: "Zenon", age: 20}, {name: "Juan", age: 45}])
+Farm.create(name: "La granja de zenon")
+Farmer.create([{name: "Zenon", age: 20, farm_id: 3}, {name: "Juan", age: 45, farm_id: 3}])

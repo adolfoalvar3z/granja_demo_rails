@@ -1,30 +1,31 @@
-
-
-
-
-<%= link_to "New animal", new_animal_path %>
-
 <p style="color: green"><%= notice %></p>
-<h1>Animals</h1>
-
+<h1>Animales</h1>
 <div class="table-responsive" id="animals">
-  <table class="table table-primary">
+  <table class="table">
     <thead>
       <tr>
         <th scope="col">Id Animal</th>
         <th scope="col">Animal</th>
         <th scope="col">Granjero</th>
+        <th scope="col">Acciones</th>
       </tr>
     </thead>
     <tbody>
-  <% @animals.each do |animal| %>
-      <tr class="">
-        <td scope="row"><%= animal.id %></td>
-        <td><%= animal.nombre %></td>
-        <td><%= animal.farmer.name %></td>
-      </tr>
-  <% end %>
-
+      <% @animals.each do |animal| %>
+        <tr class="">
+          <td scope="row"><%= animal.id %></td>
+          <td><%= animal.nombre %></td>
+          <td><%= animal.farmer.name %></td>
+          <td>
+            <div class="btn-group">
+              <%= link_to "Ver", animal, class: "btn btn-sm btn-primary" %>
+              <%= link_to "Editar", edit_animal_path(animal), class: "btn btn-sm btn-warning" %>
+              <%= button_to "Borrar", animal, method: :delete, class: "btn btn-sm btn-danger"%>
+            </div>
+          </td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
+  <%= link_to "New animal", new_animal_path, class: "btn btn-primary" %>
 </div>

@@ -1,3 +1,3 @@
 class Animal < ApplicationRecord
-  belongs_to :farmer
+  belong_to :farmer, dependent: :destroy
 end
